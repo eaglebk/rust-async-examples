@@ -11,7 +11,6 @@
 ## 🎙 Подкаст: «Rust в деталях»
 * 📘 **Выпуск 1 — BufReader | Как ускорить чтение файлов и потоков** → **[слушать](https://www.youtube.com/watch?v=gATf436M6ow)**
 * 📘 **Выпуск 2 — Основы async Rust** → слушать
-* 🔬 **Выпуск 3 — Под капотом async Rust** → слушать  _(в разработке)_
 
 ---
 ### 📂 Что внутри **src/bin**
@@ -19,25 +18,6 @@
 * `01_sequential_requests` — HTTP-запросы один за другим (последовательно).
 * `02_concurrent_requests` — те же запросы, но конкурентно (tokio::join!).
 * `03_async_fn_future` — демонстрация того, что async fn возвращает Future.
-* `04_custom_future` — своя реализация Future, пример с Pending и waker.
----
-
-### Схема: Future → Pending → waker → runtime → poll → Ready
-
-```mermaid
-flowchart TD
-    A[Начало выполнения Future] --> B{poll}
-    B -->|Готово| C[Poll::Ready → результат]
-    B -->|Не готово| D[Poll::Pending]
-    D --> E[Waker сохранён в ресурсе]
-    E --> F[Ресурс ждёт события]
-    F --> G[Событие произошло]
-    G --> H[Waker вызван]
-    H --> I[Runtime ставит задачу в очередь]
-    I --> B
-
-```
-
 ---
 
 ### 🚀 Запуск примеров
@@ -47,7 +27,6 @@ cargo run --bin 00_cpu_usage
 cargo run --bin 01_sequential_requests
 cargo run --bin 02_concurrent_requests
 cargo run --bin 03_async_fn_future
-cargo run --bin 04_custom_future
 ```
 
 Перед запуском можно собрать проект:
