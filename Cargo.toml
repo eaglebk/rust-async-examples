@@ -1,0 +1,21 @@
+[package]
+name = "async-rust-podcast-examples"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+reqwest = "0.12.22"
+futures = "0.3"
+sysinfo = { version ="0.36.1" }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+[profile.dev]
+opt-level = 0
+debug = true
+debug-assertions = true
+overflow-checks = true
