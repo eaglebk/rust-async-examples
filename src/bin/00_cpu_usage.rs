@@ -35,7 +35,7 @@ fn get_thread_count_platform(system: &System) -> usize {
         let mut total_threads = 0;
         for (pid, _) in system.processes() {
             let pid_num = pid.as_u32();
-            // Выполненяем: ps M <pid> | wc -l
+            // Выполняем: ps M <pid> | wc -l
             // Спасибо решению: https://superuser.com/a/753707
             let output = Command::new("sh")
                 .arg("-c")
@@ -59,7 +59,7 @@ fn get_thread_count_platform(system: &System) -> usize {
         let mut total_threads = 0;
         for (pid, _) in system.processes() {
             let pid_num = pid.as_u32();
-            // Выполненяем: wmic где processid=<pid> >> ThreadCount
+            // Выполняем: wmic где processid=<pid> >> ThreadCount
             let output = Command::new("wmic")
                 .args(&[
                     "process",
