@@ -46,7 +46,7 @@ cargo build
 * Tokio: [https://tokio.rs/](https://tokio.rs/)
 * Reqwest: [https://docs.rs/reqwest/latest/reqwest/](https://docs.rs/reqwest/latest/reqwest/)
 * Мой телеграм-канал «Маяк Программиста»: [https://t.me/prog\_lighthouse](https://t.me/prog_lighthouse)
-* Блог неунывающего программиста — Eagle blog: [https://eagle2001.space/](https://eagle2001.space/)
+* Блог неунывающего программиста — Eagle blog: [https://eagle2000.space/](https://eagle2000.space/)
 
 ---
 
